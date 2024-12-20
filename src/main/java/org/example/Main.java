@@ -19,6 +19,7 @@ public class Main {
         List<Produto> produtosFiltrados = produtos.stream()
                 .filter(p -> p.getCategoria().equalsIgnoreCase("Eletrônicos"))
                 .sorted(Comparator.comparing(Produto::getPreco))
+                .limit(3)
                 .collect(Collectors.toList());
 
         produtosFiltrados.forEach(System.out::println);
